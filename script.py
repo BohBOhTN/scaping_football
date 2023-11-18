@@ -8,8 +8,14 @@ driver = webdriver.Chrome()
 driver.get("https://www.adamchoi.co.uk/bttsresult/detailed")
 
 # Click on the "All Matches" button
-all_matches_button = driver.find_element(By.XPATH,"//label[@class='btn btn-sm btn-primary ng-pristine ng-untouched ng-valid ng-not-empty']")
-all_matches_button.click()
+
+def click_all_matches_button():
+    all_matches_button = driver.find_element(By.XPATH,"//label[@class='btn btn-sm btn-primary ng-pristine ng-untouched ng-valid ng-not-empty']")
+    all_matches_button.click()
+
 container = driver.find_element(By.XPATH, '//div[@class="row ng-scope"][2]')
-time.sleep(5)
+testing = print(container.text)
+for i in testing:
+    print(i)
+
 driver.quit()
